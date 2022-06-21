@@ -1,6 +1,7 @@
 server:
   port: 8888
-  servlet.context-path: /config
+  servlet:
+    context-path: /config
 
 spring:
   main:
@@ -24,3 +25,9 @@ management:
       exposure:
         include: "*"
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: false
